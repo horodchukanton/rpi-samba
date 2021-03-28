@@ -22,6 +22,8 @@ RUN apt-get clean && \
 
 EXPOSE 137/udp 138/udp 139 445
 
+ADD smb.conf.default /etc/samba/smb.conf
+
 ADD smb.sh .
 RUN chmod +x smb.sh
 CMD /smb.sh
